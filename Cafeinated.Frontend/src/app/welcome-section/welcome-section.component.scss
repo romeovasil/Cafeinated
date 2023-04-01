@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  max-width: 1500px;
+  margin: 10% auto 0 ;
+}
+
+.text {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.text h1 {
+  font-size: 45px;
+  margin-bottom: 3px;
+  color: white;
+  margin-top: 3px;
+
+}
+.text h2 {
+  font-size: 55px;
+  margin-bottom: 3px;
+  color: white;
+}
+
+.image {
+  width: 30%;
+
+  margin: 0 auto;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+p{
+  color: white;
+  font-size: 30px;
+}
+
+
