@@ -1,0 +1,13 @@
+<div class="main-content">
+        <h1>CAFENELE</h1>
+        <!-- loop over the collection of products -->
+        <div *ngFor="let tempCoffeShop of coffeeShops" >
+
+          <div class="product-box">
+            <img src="{{ tempCoffeShop.imageUrl }}" >
+            <h3>{{ tempCoffeShop.name }}</h3>
+            <h4>{{tempCoffeShop.rating}}</h4>
+          </div>
+
+        </div>
+</div>

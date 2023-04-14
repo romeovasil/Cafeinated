@@ -1,0 +1,22 @@
+{
+  "coffeeShops": [
+    {
+      "id": 1,
+      "name": "Coffee House",
+      "imageUrl":"assets/images/img1.png",
+      "rating": 4.2
+    },
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "rating": 3.8
+    },
+    {
+      "id": 3,
+      "name": "Caffeine Fix",
+      "imageUrl":"assets/images/img3.png",
+      "rating": 4.5
+    }
+  ]
+}
