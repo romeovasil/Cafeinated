@@ -1,13 +1,22 @@
 <div class="main-content">
+
+    <div class="header">
         <h1>CAFENELE</h1>
-        <!-- loop over the collection of products -->
-        <div *ngFor="let tempCoffeShop of coffeeShops" >
+    </div>
 
-          <div class="product-box">
-            <img src="{{ tempCoffeShop.imageUrl }}" >
-            <h3>{{ tempCoffeShop.name }}</h3>
-            <h4>{{tempCoffeShop.rating}}</h4>
-          </div>
-
+  <div class="container">
+    <div class="grid">
+      <div *ngFor="let tempCoffeeShop of coffeeShops" class="grid-item">
+        <div class="image-box">
+        <img class="item-image" [src]="tempCoffeeShop.imageUrl" alt="{{tempCoffeeShop.name}}" />
         </div>
+        <div class="item-info">
+          <h3 class="item-title">{{ tempCoffeeShop.name }}</h3>
+          <p class="item-rating"><span class="star">&#9733;</span> {{ tempCoffeeShop.rating }}/5</p>
+          <a class="item-view-more">View more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
