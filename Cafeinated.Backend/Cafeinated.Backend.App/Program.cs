@@ -1,6 +1,9 @@
 using System.Text;
+using Cafeinated.Backend.App.Mapper;
 using Cafeinated.Backend.Core.Database;
 using Cafeinated.Backend.Core.Entities;
+using Cafeinated.Backend.Infrastructure.Repositories;
+using Cafeinated.Backend.Infrastructure.Repositories.Abstractions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -65,7 +68,14 @@ var connectionString = configuration.GetConnectionString("Default");
 services.AddDbContext<AppDBContext>(options => options.UseNpgsql(connectionString, 
     x => x.MigrationsAssembly("Cafeinated.Backend.Infrastructure")));
 
+services.AddAutoMapper(typeof(MappingProfile));
+
+services.AddScoped<IGenericRepository<CoffeeShop>, CoffeeShopRepository>();
+
+services.AddTransient<IUploadManager, UploadManager>();
+
 var app = builder.Build();
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
