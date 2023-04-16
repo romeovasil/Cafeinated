@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Cafeinated.Backend.Core.Database;
 using Cafeinated.Backend.Core.Entities.Abstractions;
 using Cafeinated.Backend.Infrastructure.Repositories.Abstractions;
 using Cafeinated.Backend.Infrastructure.Utils;
@@ -9,23 +10,30 @@ namespace Cafeinated.Backend.Infrastructure.Repositories;
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
     private readonly DbSet<T> _dbSet;
-    private readonly DbContext _dbContext;
+    private readonly AppDBContext _dbContext;
+    private IQueryable<T> _queryable;
 
-    public GenericRepository(DbSet<T> dbSet, DbContext dbContext)
+    public GenericRepository(AppDBContext dbContext)
     {
-        _dbSet = dbSet;
+        _dbSet = dbContext.Set<T>();
+        _queryable = _dbSet;
         _dbContext = dbContext;
+    }
+    
+    public void ChainQueryable(Func<IQueryable<T>, IQueryable<T>> func)
+    {
+        _queryable = func(_queryable);
     }
 
     public async Task<ActionResponse<IEnumerable<T>>> GetAll()
     {
-        var entities = await _dbSet.ToListAsync();
+        var entities = await _queryable.ToListAsync();
         return new ActionResponse<IEnumerable<T>>(entities);
     }
 
     public async Task<ActionResponse<IEnumerable<T>>> FindBy(Expression<Func<T, bool>> predicate)
     {
-        var filteredEntities = await _dbSet.Where(predicate).ToListAsync();
+        var filteredEntities = await _queryable.Where(predicate).ToListAsync();
         return new ActionResponse<IEnumerable<T>>(filteredEntities);
     }
 
@@ -33,7 +41,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         var response = new ActionResponse<T>();
         
-        var requestedEntity = await _dbSet.FirstOrDefaultAsync(predicate);
+        var requestedEntity = await _queryable.FirstOrDefaultAsync(predicate);
         if (requestedEntity is null)
         {
             response.AddError("Requested entity doesn't exist!");
@@ -49,7 +57,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         entity.Created = entity.Updated = DateTime.Now;
         entity.Id = Guid.NewGuid().ToString();
 
-        var addedEntity = await _dbContext.AddAsync(entity);
+        var addedEntity = await _dbSet.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
         
         return new ActionResponse<T>(addedEntity.Entity) ;
@@ -66,7 +74,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
             return response;
         }
 
-        var removedEntity = _dbContext.Remove(existingEntity);
+        var removedEntity = _dbSet.Remove(existingEntity);
         await _dbContext.SaveChangesAsync();
 
         response.Item = removedEntity.Entity;
@@ -76,7 +84,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task<ActionResponse<T>> Edit(T entity)
     {
         entity.Updated = DateTime.Now;
-        var updatedEntity = _dbContext.Update(entity);
+        var updatedEntity = _dbSet.Update(entity);
         await _dbContext.SaveChangesAsync();
 
         return new ActionResponse<T>(updatedEntity.Entity);

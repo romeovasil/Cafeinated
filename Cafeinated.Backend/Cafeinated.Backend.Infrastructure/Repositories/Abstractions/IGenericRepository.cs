@@ -12,4 +12,5 @@ public interface IGenericRepository<T> where T : BaseEntity
     Task<ActionResponse<T>> Add(T entity);
     Task<ActionResponse<T>> Delete(string id);
     Task<ActionResponse<T>> Edit(T entity);
+    void ChainQueryable(Func<IQueryable<T>, IQueryable<T>> func);
 }
