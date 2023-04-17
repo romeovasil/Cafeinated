@@ -16,6 +16,7 @@ import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffe
 
 
 
+
 const routes: Routes = [
   {path: '', component: WelcomeSectionComponent},
   {path:'about-us',component: AboutUsSectionComponent},

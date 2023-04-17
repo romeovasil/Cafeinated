@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CoffeeShopService} from "../../services/coffee-shops.service";
 import {CoffeeShop} from "../../common/coffee-shop";
+import {Menu} from "../../common/menu";
+import {Coffee} from "../../common/coffee";
 
 
 
@@ -13,8 +15,8 @@ import {CoffeeShop} from "../../common/coffee-shop";
 export class CoffeeShopDetailsComponent implements OnInit {
 
   @Input() coffeeShop!: CoffeeShop;
-
-  constructor(private coffeeShopsService:CoffeeShopService) {
+  coffeeList: Coffee[] = [];
+  constructor(private coffeeShopService:CoffeeShopService) {
 
 
   }
@@ -23,13 +25,23 @@ export class CoffeeShopDetailsComponent implements OnInit {
   }
   showPopup = false;
 
-  openPopup() {
+  openPopup(currentId:number) {
+    let tempId = currentId;
+    this.coffeeShopService.getCoffeeListByCoffeeShopId(tempId).subscribe(
+      (tempCoffeeList) => {
+        this.coffeeList = tempCoffeeList;
+      },
+      (error) => {
+        console.error('Error fetching coffee menu:', error);
+      }
+    );
     this.showPopup = true;
   }
 
   closePopup() {
+    console.log("pressed")
     this.showPopup = false;
-
+    console.log(this.showPopup);
   }
 
 

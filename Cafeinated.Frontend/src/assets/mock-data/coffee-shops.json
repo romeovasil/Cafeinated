@@ -8,17 +8,102 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.2
-    },
+      "rating": 4.2,
+
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Cafa cu lapte",
+            "price": 100
+          }
+        ]
+      }
+      },
     {
       "id": 2,
       "name": "Joe's Coffee",
       "imageUrl":"assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
-      "detailsImageUrl": "assets/images/details.png",
+      "detailsImageUrl": "assets/images/img1.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 35
+          },
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 35
+          },
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 35
+          },
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 35
+          }
+        ]
+      }
     },
     {
       "id": 3,
@@ -28,7 +113,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Mall Timisoara",
       "website": "CafeFix.com",
-      "rating": 4.5
+      "rating": 4.5,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },{
       "id": 4,
       "name": "Cafe colt",
@@ -37,7 +141,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Pe colt Timisoara",
       "website": "colt.com",
-      "rating": 4.2
+      "rating": 4.2,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },
     {
       "id": 5,
@@ -47,7 +170,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Dumbravita Timisoara",
       "website": "tucano.ro",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },
     {
       "id": 6,
@@ -57,7 +199,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Str rasaritului Timisoara",
       "website": "starbucks.com",
-      "rating": 4.5
+      "rating": 4.5,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },
     {
       "id": 1,
@@ -67,7 +228,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.2
+      "rating": 4.2,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },
     {
       "id": 2,
@@ -77,7 +257,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     },
     {
       "id": 3,
@@ -87,7 +286,26 @@
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.5
+      "rating": 4.5,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -98,7 +316,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -109,7 +346,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -120,7 +376,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -131,7 +406,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -142,7 +436,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
   ,
     {
@@ -153,7 +466,26 @@
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8
+      "rating": 3.8,
+      "menu": {
+        "coffeeList": [
+          {
+            "id": 1,
+            "name": "Espresso",
+            "price": 2.5
+          },
+          {
+            "id": 2,
+            "name": "Cappuccino",
+            "price": 3.5
+          },
+          {
+            "id": 3,
+            "name": "Latte",
+            "price": 3.5
+          }
+        ]
+      }
     }
 
   ]
