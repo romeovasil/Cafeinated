@@ -1,11 +1,13 @@
 <main>
 
   <div class="popup-container" [hidden]="!showPopup">
+    <div class="details-text">
+      <p>{{coffeeShop.name}}</p>
+      <p><span class="star">&#9733; </span> {{coffeeShop.rating}}/5</p>
+      <p>{{coffeeShop.address}}</p>
+      <p>{{coffeeShop.website}}</p>
+    </div>
 
-    <p>{{coffeeShop.name}}</p>
-    <p>{{coffeeShop.rating}}</p>
-    <p>{{coffeeShop.address}}</p>
-    <p>{{coffeeShop.website}}</p>
     <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
     <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
     <br><br>
