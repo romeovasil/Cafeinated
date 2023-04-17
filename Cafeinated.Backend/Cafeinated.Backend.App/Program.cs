@@ -6,6 +6,7 @@ using Cafeinated.Backend.Infrastructure.Repositories;
 using Cafeinated.Backend.Infrastructure.Repositories.Abstractions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -83,6 +84,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var contentDir = configuration["Content_Directory"];
+contentDir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), contentDir));
+if (!Directory.Exists(contentDir))
+{
+    Console.WriteLine("Creating CONTENT_DIRECTORY: " + contentDir);
+    Directory.CreateDirectory(contentDir);
+}
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(contentDir),
+    RequestPath = "/content",
+    ServeUnknownFileTypes = true
+});
 
 app.UseHttpsRedirection();
 
