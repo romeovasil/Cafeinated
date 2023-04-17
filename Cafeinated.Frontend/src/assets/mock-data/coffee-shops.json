@@ -89,5 +89,72 @@
       "website": "coffeHouse.com",
       "rating": 4.5
     }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+  ,
+    {
+      "id": 2,
+      "name": "Joe's Coffee",
+      "imageUrl":"assets/images/img2.png",
+      "address": "Piata Unirii Timisoara",
+      "mapImageUrl": "assets/images/map.png",
+      "detailsImageUrl": "assets/images/details.png",
+      "website": "joesCoffee.com",
+      "rating": 3.8
+    }
+
   ]
 }
