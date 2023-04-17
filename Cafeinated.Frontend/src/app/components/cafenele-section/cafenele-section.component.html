@@ -3,18 +3,22 @@
     <div class="header">
         <h1>CAFENELE</h1>
     </div>
-
   <div class="container">
     <div class="grid">
-      <div *ngFor="let tempCoffeeShop of coffeeShops" class="grid-item">
+
+      <div  *ngFor="let tempCoffeeShop of coffeeShops" class="grid-item">
+        <app-coffee-shop-details [coffeeShop]="tempCoffeeShop" ></app-coffee-shop-details>
         <div class="image-box">
-        <img class="item-image" [src]="tempCoffeeShop.imageUrl" alt="{{tempCoffeeShop.name}}" />
+          <app-coffee-shop-details #detailsCoffeeShop [coffeeShop]="tempCoffeeShop"></app-coffee-shop-details>
+        <img  class="item-image" [src]="tempCoffeeShop.imageUrl" (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup()"   alt="{{tempCoffeeShop.name}}" />
+
         </div>
         <div class="item-info">
           <h3 class="item-title">{{ tempCoffeeShop.name }}</h3>
           <p class="item-rating"><span class="star">&#9733;</span> {{ tempCoffeeShop.rating }}/5</p>
           <a class="item-view-more">View more</a>
         </div>
+
       </div>
     </div>
   </div>
