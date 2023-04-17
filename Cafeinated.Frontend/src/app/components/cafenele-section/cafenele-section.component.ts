@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CoffeeShop} from "../../common/coffee-shop";
 import {CoffeeShopService} from "../../services/coffee-shops.service";
-import {CoffeeShopDetailsComponent} from "../coffee-shop-details/coffee-shop-details.component";
 
 
 @Component({
@@ -12,10 +11,11 @@ import {CoffeeShopDetailsComponent} from "../coffee-shop-details/coffee-shop-det
 export class CafeneleSectionComponent implements OnInit {
 
   coffeeShops: CoffeeShop[] = [];
-  detailsCoffeeShop! : CoffeeShop;
+  detailsCoffeeShop!: CoffeeShop;
 
 
-  constructor(private coffeShopService: CoffeeShopService) { }
+  constructor(private coffeShopService: CoffeeShopService) {
+  }
 
   ngOnInit() {
     this.listCoffeeShops();
@@ -29,11 +29,10 @@ export class CafeneleSectionComponent implements OnInit {
     )
   }
 
-  showDetails(tempCoffeeShop:CoffeeShop){
-    this.detailsCoffeeShop=tempCoffeeShop;
+  showDetails(tempCoffeeShop: CoffeeShop) {
+    this.detailsCoffeeShop = tempCoffeeShop;
 
   }
-
 
 
 }

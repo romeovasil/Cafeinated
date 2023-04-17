@@ -4,8 +4,8 @@ nav {
   align-items: center;
   padding: 20px;
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: orange;
 }
@@ -18,7 +18,7 @@ nav {
   color: white;
 }
 
-.logoButton a{
+.logoButton a {
   text-decoration: none;
   font-size: 25px;
   font-weight: bold;
@@ -26,11 +26,11 @@ nav {
   font-family: 'DynaPuff', cursive;
 }
 
-.comandaButton{
+.comandaButton {
   background-color: darkred;
   border-radius: 18px;
   text-align: center;
-  width:110px;
+  width: 110px;
   padding: 10px 20px;
   cursor: pointer;
 }

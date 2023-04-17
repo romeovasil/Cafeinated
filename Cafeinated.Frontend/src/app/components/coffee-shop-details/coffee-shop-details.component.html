@@ -1,50 +1,44 @@
 <main>
 
-  <div class="popup-container" [hidden]="!showPopup">
+  <div [hidden]="!showPopup" class="popup-container">
     <div class="content">
-    <div class="left-side" >
-    <div class="details-text">
-      <p class="coffeShopName">{{coffeeShop.name}}</p>
-      <p class="rating"><span class="star">&#9733; </span> {{coffeeShop.rating}}/5</p>
-      <p class="address">{{coffeeShop.address}}</p>
-      <p class="website">{{coffeeShop.website}}</p>
-      <p class="meniu">Meniu</p>
+      <div class="left-side">
+        <div class="details-text">
+          <p class="coffeShopName">{{coffeeShop.name}}</p>
+          <p class="rating"><span class="star">&#9733; </span> {{coffeeShop.rating}}/5</p>
+          <p class="address">{{coffeeShop.address}}</p>
+          <p class="website">{{coffeeShop.website}}</p>
+          <p class="meniu">Meniu</p>
 
-      <div  *ngFor="let tempCoffeeList of coffeeList">
+          <div *ngFor="let tempCoffeeList of coffeeList">
 
-        <div class="Menu">
-          <span class="menu-text">{{tempCoffeeList.name}} .......................... {{tempCoffeeList.price}} lei </span>
-          <button class="plus-button">+ </button>
+            <div class="Menu">
+              <span class="menu-text">{{tempCoffeeList.name}} .......................... {{tempCoffeeList.price}}
+                lei </span>
+              <button class="plus-button">+</button>
+            </div>
+
+          </div>
+
+
         </div>
 
       </div>
 
+      <div class="right-side">
+        <div class="images-container">
+
+          <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
+          <br>
+          <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
 
 
-
-
-
-    </div>
-
-    </div>
-
-    <div class="right-side">
-    <div class="images-container">
-
-        <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
-        <br>
-        <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
+        </div>
+      </div>
 
 
     </div>
-    </div>
-
-
-
-
-
-    </div>
-    <div  class="back-button " (click)="closePopup()">
+    <div (click)="closePopup()" class="back-button ">
       <button class="return-page-button">&#8617;</button>
     </div>
 
