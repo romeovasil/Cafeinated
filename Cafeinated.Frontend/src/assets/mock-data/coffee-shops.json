@@ -3,13 +3,12 @@
     {
       "id": 1,
       "name": "Coffee House",
-      "imageUrl":"assets/images/img1.png",
+      "photoPreviewUrl": "assets/images/img1.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.2,
-
+      "averageRating": 4.2,
       "menu": {
         "coffeeList": [
           {
@@ -29,16 +28,16 @@
           }
         ]
       }
-      },
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/img1.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -81,7 +80,6 @@
             "name": "Cappuccino",
             "price": 3.5
           },
-
           {
             "id": 3,
             "name": "Latte",
@@ -108,12 +106,12 @@
     {
       "id": 3,
       "name": "Caffeine Fix",
-      "imageUrl":"assets/images/img3.png",
+      "photoPreviewUrl": "assets/images/img3.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Mall Timisoara",
       "website": "CafeFix.com",
-      "rating": 4.5,
+      "averageRating": 4.5,
       "menu": {
         "coffeeList": [
           {
@@ -133,15 +131,16 @@
           }
         ]
       }
-    },{
+    },
+    {
       "id": 4,
       "name": "Cafe colt",
-      "imageUrl":"assets/images/img1.png",
+      "photoPreviewUrl": "assets/images/img1.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Pe colt Timisoara",
       "website": "colt.com",
-      "rating": 4.2,
+      "averageRating": 4.2,
       "menu": {
         "coffeeList": [
           {
@@ -165,12 +164,12 @@
     {
       "id": 5,
       "name": "Tucano",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Dumbravita Timisoara",
       "website": "tucano.ro",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -194,12 +193,12 @@
     {
       "id": 6,
       "name": "Starbucks",
-      "imageUrl":"assets/images/img3.png",
+      "photoPreviewUrl": "assets/images/img3.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Str rasaritului Timisoara",
       "website": "starbucks.com",
-      "rating": 4.5,
+      "averageRating": 4.5,
       "menu": {
         "coffeeList": [
           {
@@ -223,12 +222,12 @@
     {
       "id": 1,
       "name": "Coffee House",
-      "imageUrl":"assets/images/img1.png",
+      "photoPreviewUrl": "assets/images/img1.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.2,
+      "averageRating": 4.2,
       "menu": {
         "coffeeList": [
           {
@@ -252,12 +251,12 @@
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -281,12 +280,12 @@
     {
       "id": 3,
       "name": "Caffeine Fix",
-      "imageUrl": "assets/images/img3.png",
+      "photoPreviewUrl": "assets/images/img3.png",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
-      "rating": 4.5,
+      "averageRating": 4.5,
       "menu": {
         "coffeeList": [
           {
@@ -306,17 +305,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -336,17 +334,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -366,17 +363,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -396,17 +392,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -426,17 +421,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -456,17 +450,16 @@
           }
         ]
       }
-    }
-  ,
+    },
     {
       "id": 2,
       "name": "Joe's Coffee",
-      "imageUrl":"assets/images/img2.png",
+      "photoPreviewUrl": "assets/images/img2.png",
       "address": "Piata Unirii Timisoara",
       "mapImageUrl": "assets/images/map.png",
       "detailsImageUrl": "assets/images/details.png",
       "website": "joesCoffee.com",
-      "rating": 3.8,
+      "averageRating": 3.8,
       "menu": {
         "coffeeList": [
           {
@@ -487,6 +480,5 @@
         ]
       }
     }
-
   ]
 }

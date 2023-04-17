@@ -1,10 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
 import {CoffeeShopService} from "../../services/coffee-shops.service";
 import {CoffeeShop} from "../../common/coffee-shop";
-import {Menu} from "../../common/menu";
 import {Coffee} from "../../common/coffee";
-
 
 
 @Component({
@@ -16,16 +13,18 @@ export class CoffeeShopDetailsComponent implements OnInit {
 
   @Input() coffeeShop!: CoffeeShop;
   coffeeList: Coffee[] = [];
-  constructor(private coffeeShopService:CoffeeShopService) {
-
-
-  }
-  ngOnInit():void {
-
-  }
   showPopup = false;
 
-  openPopup(currentId:number) {
+  constructor(private coffeeShopService: CoffeeShopService) {
+
+
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  openPopup(currentId: number) {
     let tempId = currentId;
     this.coffeeShopService.getCoffeeListByCoffeeShopId(tempId).subscribe(
       (tempCoffeeList) => {

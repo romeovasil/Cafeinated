@@ -10,7 +10,14 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -23,7 +30,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -40,6 +47,7 @@
             "scripts": []
           },
           "configurations": {
+            "local": {},
             "production": {
               "budgets": [
                 {
@@ -80,9 +88,12 @@
             },
             "development": {
               "browserTarget": "Frontend:build:development"
+            },
+            "local": {
+              "browserTarget": "Frontend:build:local"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "local"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -110,6 +121,5 @@
         }
       }
     }
-  },
-  "defaultProject": "Frontend"
+  }
 }
