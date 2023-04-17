@@ -1,0 +1,16 @@
+<main>
+
+  <div class="popup-container" [hidden]="!showPopup">
+
+    <p>{{coffeeShop.name}}</p>
+    <p>{{coffeeShop.rating}}</p>
+    <p>{{coffeeShop.address}}</p>
+    <p>{{coffeeShop.website}}</p>
+    <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
+    <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
+    <br><br>
+    <button (click)="closePopup()">return</button>
+  </div>
+
+
+</main>

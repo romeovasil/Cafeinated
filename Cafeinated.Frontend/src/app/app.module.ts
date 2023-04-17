@@ -11,13 +11,16 @@ import { AboutUsSectionComponent } from './components/about-us-section/about-us-
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import { CafeneleSectionComponent } from './components/cafenele-section/cafenele-section.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffee-shop-details.component";
+
 
 
 
 const routes: Routes = [
   {path: '', component: WelcomeSectionComponent},
   {path:'about-us',component: AboutUsSectionComponent},
-  {path:'cafenele',component: CafeneleSectionComponent}
+  {path:'cafenele',component: CafeneleSectionComponent},
+  {path:'details/:id',component:CoffeeShopDetailsComponent}
   ]
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ const routes: Routes = [
     NavbarComponent,
     WelcomeSectionComponent,
     AboutUsSectionComponent,
-    CafeneleSectionComponent
+    CafeneleSectionComponent,
+    CoffeeShopDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
