@@ -4,7 +4,7 @@ export class Menu {
 
 
   constructor( public id: number,
-               public coffeeList:Coffee){
+               public coffeeList:Coffee[]){
 
   }
 }

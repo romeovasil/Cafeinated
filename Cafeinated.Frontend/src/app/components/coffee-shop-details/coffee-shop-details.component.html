@@ -1,17 +1,53 @@
 <main>
 
   <div class="popup-container" [hidden]="!showPopup">
+    <div class="content">
+    <div class="left-side" >
     <div class="details-text">
-      <p>{{coffeeShop.name}}</p>
-      <p><span class="star">&#9733; </span> {{coffeeShop.rating}}/5</p>
-      <p>{{coffeeShop.address}}</p>
-      <p>{{coffeeShop.website}}</p>
+      <p class="coffeShopName">{{coffeeShop.name}}</p>
+      <p class="rating"><span class="star">&#9733; </span> {{coffeeShop.rating}}/5</p>
+      <p class="address">{{coffeeShop.address}}</p>
+      <p class="website">{{coffeeShop.website}}</p>
+      <p class="meniu">Meniu</p>
+
+      <div  *ngFor="let tempCoffeeList of coffeeList">
+
+        <div class="Menu">
+          <span class="menu-text">{{tempCoffeeList.name}} .......................... {{tempCoffeeList.price}} lei </span>
+          <button class="plus-button">+ </button>
+        </div>
+
+      </div>
+
+
+
+
+
+
     </div>
 
-    <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
-    <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
-    <br><br>
-    <button (click)="closePopup()">return</button>
+    </div>
+
+    <div class="right-side">
+    <div class="images-container">
+
+        <img class="map-image" src="{{coffeeShop.mapImageUrl}}">
+        <br>
+        <img class="map-image" src="{{coffeeShop.detailsImageUrl}}">
+
+
+    </div>
+    </div>
+
+
+
+
+
+    </div>
+    <div  class="back-button " (click)="closePopup()">
+      <button class="return-page-button">&#8617;</button>
+    </div>
+
   </div>
 
 

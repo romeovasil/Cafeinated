@@ -7,14 +7,13 @@
     <div class="grid">
 
       <div  *ngFor="let tempCoffeeShop of coffeeShops" class="grid-item">
-        <app-coffee-shop-details [coffeeShop]="tempCoffeeShop" ></app-coffee-shop-details>
 
         <div class="image-box" >
           <app-coffee-shop-details #detailsCoffeeShop [coffeeShop]="tempCoffeeShop"></app-coffee-shop-details>
-        <img  class="item-image" [src]="tempCoffeeShop.imageUrl"  (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup()" alt="{{tempCoffeeShop.name}}" />
+        <img  class="item-image" [src]="tempCoffeeShop.imageUrl"  (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup(tempCoffeeShop.id)" alt="{{tempCoffeeShop.name}}" />
 
         </div>
-        <div class="item-info" (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup()">
+        <div class="item-info" (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup(tempCoffeeShop.id)">
           <h3 class="item-title">{{ tempCoffeeShop.name }}</h3>
           <p class="item-rating"><span class="star">&#9733;</span> {{ tempCoffeeShop.rating }}/5</p>
           <a class="item-view-more">View more</a>

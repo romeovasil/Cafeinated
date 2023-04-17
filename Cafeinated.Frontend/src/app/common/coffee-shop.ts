@@ -1,3 +1,5 @@
+import {Menu} from "./menu";
+
 export class CoffeeShop {
 
   constructor( public id: number,
@@ -7,6 +9,7 @@ export class CoffeeShop {
    public website:string,
    public detailsImageUrl:string,
    public mapImageUrl:string,
+   public menu:Menu,
    public rating: number
 
                ) {
