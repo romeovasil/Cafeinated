@@ -9,7 +9,6 @@
       "address": "Piata Operei Timisoara",
       "website": "coffeHouse.com",
       "averageRating": 4.2,
-      "menu": {
         "coffeeList": [
           {
             "id": 1,
@@ -27,7 +26,6 @@
             "price": 100
           }
         ]
-      }
     },
     {
       "id": 2,
@@ -38,7 +36,6 @@
       "detailsImageUrl": "assets/images/img1.png",
       "website": "joesCoffee.com",
       "averageRating": 3.8,
-      "menu": {
         "coffeeList": [
           {
             "id": 1,
@@ -101,7 +98,6 @@
             "price": 35
           }
         ]
-      }
     },
     {
       "id": 3,
@@ -112,7 +108,6 @@
       "address": "Mall Timisoara",
       "website": "CafeFix.com",
       "averageRating": 4.5,
-      "menu": {
         "coffeeList": [
           {
             "id": 1,
@@ -130,7 +125,6 @@
             "price": 3.5
           }
         ]
-      }
     },
     {
       "id": 4,

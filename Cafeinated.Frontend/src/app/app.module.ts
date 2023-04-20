@@ -12,13 +12,15 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 import {CafeneleSectionComponent} from './components/cafenele-section/cafenele-section.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffee-shop-details.component";
+import { CartSectionComponent } from './components/cart-section/cart-section.component';
 
 
 const routes: Routes = [
   {path: '', component: WelcomeSectionComponent},
   {path: 'about-us', component: AboutUsSectionComponent},
   {path: 'cafenele', component: CafeneleSectionComponent},
-  {path: 'details/:id', component: CoffeeShopDetailsComponent}
+  {path: 'details/:id', component: CoffeeShopDetailsComponent},
+  {path:'cart',component:CartSectionComponent}
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const routes: Routes = [
     WelcomeSectionComponent,
     AboutUsSectionComponent,
     CafeneleSectionComponent,
-    CoffeeShopDetailsComponent
+    CoffeeShopDetailsComponent,
+    CartSectionComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
