@@ -72,6 +72,7 @@ services.AddDbContext<AppDBContext>(options => options.UseNpgsql(connectionStrin
 services.AddAutoMapper(typeof(MappingProfile));
 
 services.AddScoped<IGenericRepository<CoffeeShop>, CoffeeShopRepository>();
+services.AddScoped<IGenericRepository<CoffeeType>, CoffeeTypeRepository>();
 
 services.AddTransient<IUploadManager, UploadManager>();
 

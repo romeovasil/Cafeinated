@@ -1,13 +1,13 @@
 {
   "/api/*": {
     "target": "https://localhost:7150/",
-    "secure": true,
+    "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
   "/content/*": {
     "target": "https://localhost:7150/",
-    "secure": true,
+    "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   }

@@ -24,16 +24,8 @@ export class CoffeeShopDetailsComponent implements OnInit {
 
   }
 
-  openPopup(currentId: string) {
-    let tempId = currentId;
-    this.coffeeShopService.getCoffeeListByCoffeeShopId(tempId).subscribe(
-      (tempCoffeeList) => {
-        this.coffeeList = tempCoffeeList;
-      },
-      (error) => {
-        console.error('Error fetching coffee menu:', error);
-      }
-    );
+  openPopup() {
+    this.coffeeList = this.coffeeShop.coffeeList;
     this.showPopup = true;
   }
 
