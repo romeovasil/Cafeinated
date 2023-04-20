@@ -26,13 +26,13 @@ export class CoffeeShopService {
   }
 
 
-  getCoffeeListByCoffeeShopId(id: number): Observable<Coffee[]> {
+  getCoffeeListByCoffeeShopId(id: string): Observable<Coffee[]> {
     return this.http
       .get<{ coffeeShops: CoffeeShop[] }>(this.coffeeShopsUrl)
       .pipe(
         map((response) => {
           const coffeeShop = response.coffeeShops.find((shop) => shop.id === id);
-          return coffeeShop ? coffeeShop.menu.coffeeList : [];
+          return coffeeShop ? coffeeShop.coffeeList : [];
         })
       );
   }

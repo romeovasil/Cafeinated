@@ -24,7 +24,7 @@ export class CoffeeShopDetailsComponent implements OnInit {
 
   }
 
-  openPopup(currentId: number) {
+  openPopup(currentId: string) {
     let tempId = currentId;
     this.coffeeShopService.getCoffeeListByCoffeeShopId(tempId).subscribe(
       (tempCoffeeList) => {
