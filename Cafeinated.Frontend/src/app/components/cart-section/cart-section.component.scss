@@ -1,0 +1,127 @@
+.cartPage{
+  margin-top: 110px;
+  margin-left: 20%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+
+}
+
+.cartTitle{
+  color: white;
+  margin-left: 25px;
+  font-weight: bolder;
+  font-size: 60px;
+  margin-bottom: 45px;
+  letter-spacing: 6px;
+}
+
+.empty-cart{
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.info-text{
+  margin-top: 15px;
+   margin-left: 30px;
+}
+
+.back-button{
+  margin-left: 30px;
+  margin-top: 25px;
+  background-color: darkred;
+  text-align: center;
+  width: 140px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0px solid;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cartMain{
+  width: 100%;
+  max-width: 710px;
+  border-radius: 20px;
+  height: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  z-index: 1;
+  backdrop-filter: blur(50px);
+  border: 1px solid black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  background-color: rgba(227, 151, 52, 0.91); /* Add this line */
+
+}
+
+.not-empty-cart{
+  color: white;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.next-button{
+  margin-top: 25px;
+}
+
+.delete-cart{
+  margin-bottom: 30px;
+  background-color: darkred;
+  text-align: center;
+  cursor: pointer;
+  border: 0px solid;
+  width: 85px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+
+}
+
+.delete-coffee{
+  background-color: lightyellow;
+  text-align: center;
+  cursor: pointer;
+  border: 0px solid;
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  color: orange;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.quantity-button{
+  color: orange;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: lightyellow;
+  border: 0px solid;
+  border-color: orange;
+
+
+}
+
+.next-step{
+  background-color: darkred;
+  text-align: center;
+  cursor: pointer;
+  border: 0px solid;
+  width: 85px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+
+}
+
+.coffeShop-name{
+  font-weight: bolder;
+  font-size: 24px;
+  margin-bottom: 25px;
+}

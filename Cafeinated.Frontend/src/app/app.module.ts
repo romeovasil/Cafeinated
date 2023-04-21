@@ -15,6 +15,7 @@ import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffe
 import { CartSectionComponent } from './components/cart-section/cart-section.component';
 
 
+
 const routes: Routes = [
   {path: '', component: WelcomeSectionComponent},
   {path: 'about-us', component: AboutUsSectionComponent},
