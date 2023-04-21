@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CoffeeShopService} from "../../services/coffee-shops.service";
 import {CoffeeShop} from "../../common/coffee-shop";
 import {Coffee} from "../../common/coffee";
+import {CartService} from "../../services/cart.service";
+import {CartItem} from "../../common/cart-item";
 
 
 @Component({
@@ -15,7 +17,7 @@ export class CoffeeShopDetailsComponent implements OnInit {
   coffeeList: Coffee[] = [];
   showPopup = false;
 
-  constructor(private coffeeShopService: CoffeeShopService) {
+  constructor(private coffeeShopService: CoffeeShopService , private cartService: CartService) {
 
 
   }
@@ -43,5 +45,10 @@ export class CoffeeShopDetailsComponent implements OnInit {
     console.log(this.showPopup);
   }
 
+  addToCart(theCoffee: Coffee, coffeeShop: CoffeeShop)
+  {
+    const theCartItem = new CartItem(theCoffee,coffeeShop)
+    this.cartService.addToCart(theCartItem);
+  }
 
 }

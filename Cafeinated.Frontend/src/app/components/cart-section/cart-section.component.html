@@ -1,11 +1,57 @@
-<p>cart-section works!</p>
-<p>cart-section works!</p>
-<p>cart-section works!</p>
-<p>cart-section works!</p><p>cart-section works!</p><p>cart-section works!</p>
+<div class="cartPage">
 
-<p>cart-section works!</p>
-<p>cart-section works!</p>
-<p>cart-section works!</p>
+    <div class="cartTitle">
+        Coșul tău
+    </div>
+    <div class="cartMain">
+
+      <div class="not-empty-cart" *ngIf="cartItems.length!=0" >
+
+      <div class="coffeShop-name">
+        Cafenea: {{cartItems[0].coffeeShop.name}}
+      </div>
+
+        <div>
+
+      <div *ngFor="let tempCartItem of cartItems">
+        <p><button class="quantity-button" (click)="decrementQuantity(tempCartItem)">-</button> {{tempCartItem.quantity}}x
+          <button class="quantity-button" (click)="incrementQuantity(tempCartItem)">+</button>
+          {{tempCartItem.name}} - {{tempCartItem.unitPrice}} lei
+          <button class="delete-coffee" (click)="removeCoffe(tempCartItem)">Elimina</button>
+        </p>
+
+      </div>
+          <div >
+            <button class="delete-cart" (click)="deleteCart()">Goleste cosul</button>
+          </div>
+          <div>
+            <p>Livrare - 7 lei</p>
+            <p>Total = {{totalPrice +7}} lei </p>
+          </div>
+
+
+        </div>
+      <div>
+        <button class="next-step">Pasul următor</button>
+      </div>
 
 
 
+
+    </div>
+
+
+    <div class="empty-cart" *ngIf="cartItems.length==0">
+      <div class="info-text">
+        <p> Momentan nu ai nimic in cos</p>
+      </div>
+
+      <button class="back-button" routerLink="/cafenele">Inapoi la cafenele</button>
+
+    </div>
+    </div>
+
+
+
+
+</div>
