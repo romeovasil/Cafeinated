@@ -10,6 +10,12 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureAppConfiguration((builderContext, config) =>
+{
+    config
+        .AddJsonFile("secrets/appsettings.secrets.json", optional: true) 
+        .AddEnvironmentVariables();
+});
 var services = builder.Services;
 var configuration = builder.Configuration;
 
@@ -25,7 +31,7 @@ services.AddCors(options =>
     options.AddPolicy("CafeinatedCorsPolicy", builder =>
     {
         builder
-            .WithOrigins("http://localhost:4200")
+            .WithOrigins("http://localhost:4200", "https://cafeinated.edicz.com")
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
@@ -80,10 +86,16 @@ var app = builder.Build();
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
+    Console.WriteLine("Running EF migrations...");
+    dbContext.Database.Migrate();
 }
 
 var contentDir = configuration["Content_Directory"];
