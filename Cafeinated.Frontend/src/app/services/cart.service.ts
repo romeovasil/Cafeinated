@@ -20,7 +20,6 @@ export class CartService {
       this.persistCartItems();
     }
   }
-
   public addToCart(theCartItem:CartItem){
     let alreadyExistsInCart: boolean = false;
     let existingCartItem: CartItem = undefined!;
@@ -28,15 +27,27 @@ export class CartService {
     if (this.cartItems.length > 0) {
       existingCartItem = this.cartItems.find(tempCartItem => tempCartItem.id == theCartItem.id)!;
     }
-
     alreadyExistsInCart = (existingCartItem != undefined);
-
-
     if (alreadyExistsInCart) {
       existingCartItem.quantity++;
     }
     else {
-      this.cartItems.push(theCartItem);
+      if(this.cartItems.length>0)
+      {
+
+        if(this.cartItems[0].coffeeShop.id==theCartItem.coffeeShop.id){
+          this.cartItems.push(theCartItem);
+        }
+        else{
+          this.cartItems.splice(0,this.cartItems.length);
+          this.cartItems.push(theCartItem);
+        }
+      }
+      else{
+        this.cartItems.push(theCartItem);
+      }
+
+
     }
 
     this.computeCartTotals();
