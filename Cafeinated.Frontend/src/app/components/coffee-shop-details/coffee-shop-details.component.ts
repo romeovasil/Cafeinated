@@ -1,9 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {CoffeeShopService} from "../../services/coffee-shops.service";
 import {CoffeeShop} from "../../common/coffee-shop";
 import {Coffee} from "../../common/coffee";
 import {CartService} from "../../services/cart.service";
 import {CartItem} from "../../common/cart-item";
+
+import {NewCartPopUpComponent} from "../new-cart-pop-up/new-cart-pop-up.component";
 
 
 @Component({
@@ -16,6 +18,8 @@ export class CoffeeShopDetailsComponent implements OnInit {
   @Input() coffeeShop!: CoffeeShop;
   coffeeList: Coffee[] = [];
   showPopup = false;
+  @ViewChild('newCartPopUp') newCartPopUp!: NewCartPopUpComponent;
+
 
   constructor(private coffeeShopService: CoffeeShopService , private cartService: CartService) {
 
@@ -39,8 +43,24 @@ export class CoffeeShopDetailsComponent implements OnInit {
 
   addToCart(theCoffee: Coffee, coffeeShop: CoffeeShop)
   {
+
     const theCartItem = new CartItem(theCoffee,coffeeShop)
-    this.cartService.addToCart(theCartItem);
+    if(this.cartService.cartItems.length==0)
+    {
+      this.cartService.addToCart(theCartItem);
+      console.log("Aceeasi cafenea");
+    }
+    else{
+      if(this.cartService.cartItems[0].coffeeShop.id!=coffeeShop.id)
+      {
+        this.newCartPopUp.openPopup(theCartItem);
+      }
+      else{
+        this.cartService.addToCart(theCartItem);
+        console.log("Aceeasi cafenea");
+      }
+    }
+
   }
 
 }

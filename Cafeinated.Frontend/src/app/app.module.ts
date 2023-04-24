@@ -13,6 +13,7 @@ import {CafeneleSectionComponent} from './components/cafenele-section/cafenele-s
 import {HttpClientModule} from "@angular/common/http";
 import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffee-shop-details.component";
 import { CartSectionComponent } from './components/cart-section/cart-section.component';
+import { NewCartPopUpComponent } from './components/new-cart-pop-up/new-cart-pop-up.component';
 
 
 
@@ -32,7 +33,8 @@ const routes: Routes = [
     AboutUsSectionComponent,
     CafeneleSectionComponent,
     CoffeeShopDetailsComponent,
-    CartSectionComponent
+    CartSectionComponent,
+    NewCartPopUpComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
