@@ -1,0 +1,14 @@
+{
+  "/api/*": {
+    "target": "https://cafeinated.edicz.com/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/content/*": {
+    "target": "https://cafeinated.edicz.com/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
