@@ -55,12 +55,12 @@
           {
             "id": 4,
             "name": "Ceai",
-            "price": 5
+            "pricePerUnit": 5
           },
           {
             "id": 5,
             "name": "Cioco",
-            "price": 10
+            "pricePerUnit": 10
           },
 
           {

@@ -13,7 +13,7 @@ export class CartItem {
   constructor(coffee: Coffee , coffeeShop:CoffeeShop) {
     this.id = coffee.id;
     this.name = coffee.name;
-    this.unitPrice = coffee.price;
+    this.unitPrice = coffee.pricePerUnit;
     this.quantity = 1;
     this.coffeeShop=coffeeShop;
   }
