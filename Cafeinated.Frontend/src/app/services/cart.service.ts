@@ -10,7 +10,16 @@ export class CartService {
   cartItems: CartItem[]=[];
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
-  constructor() { }
+
+  storage:Storage = localStorage;
+  constructor() {
+    let data =JSON.parse(this.storage.getItem('cartItems')!);
+    if ( data !=null)
+    {
+      this.cartItems = data;
+      this.persistCartItems();
+    }
+  }
 
   public addToCart(theCartItem:CartItem){
     let alreadyExistsInCart: boolean = false;
@@ -53,6 +62,12 @@ export class CartService {
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
 
+    this.persistCartItems()
+
+  }
+
+  persistCartItems(){
+    this.storage.setItem('cartItems',JSON.stringify(this.cartItems));
   }
 
   getCartItems() :CartItem[]{
