@@ -1,0 +1,19 @@
+<main>
+  <div [hidden]="!showPopup" class="popup-container">
+
+    <div class="question-text">
+      <p>Ai deja produse de la altă cafenea în coș.</p>
+      <p> Vrei să le ștergi pentru a adăuga acest produs?</p>
+    </div>
+
+
+    <div class="buttons-container">
+      <button class="sure-button" (click)="addToNewCart()">Adaugă</button>
+      <button class="close-button" (click)="closePopup()">Înapoi</button>
+    </div>
+
+
+  </div>
+</main>
+
+
