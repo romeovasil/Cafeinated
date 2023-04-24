@@ -10,12 +10,12 @@
 
         <div class="image-box">
           <app-coffee-shop-details #detailsCoffeeShop [coffeeShop]="tempCoffeeShop"></app-coffee-shop-details>
-          <img (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup(tempCoffeeShop.id)" [src]="tempCoffeeShop.photoPreviewUrl"
+          <img (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup()" [src]="tempCoffeeShop.photoPreviewUrl"
                alt="{{tempCoffeeShop.name}}"
                class="item-image"/>
 
         </div>
-        <div (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup(tempCoffeeShop.id)" class="item-info">
+        <div (click)="showDetails(tempCoffeeShop);detailsCoffeeShop.openPopup()" class="item-info">
           <h3 class="item-title">{{ tempCoffeeShop.name }}</h3>
           <p class="item-rating"><span class="star">&#9733;</span> {{ tempCoffeeShop.averageRating }}/5</p>
           <a class="item-view-more">View more</a>

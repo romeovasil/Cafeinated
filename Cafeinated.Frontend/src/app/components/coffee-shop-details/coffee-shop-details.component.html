@@ -13,7 +13,7 @@
           <div *ngFor="let tempCoffeeList of coffeeList">
 
             <div class="Menu">
-              <span class="menu-text">{{tempCoffeeList.name}} .......................... {{tempCoffeeList.price}}
+              <span class="menu-text">{{tempCoffeeList.name}} .......................... {{tempCoffeeList.pricePerUnit}}
                 lei </span>
               <button class="plus-button" (click)="addToCart(tempCoffeeList,coffeeShop)">+</button>
             </div>

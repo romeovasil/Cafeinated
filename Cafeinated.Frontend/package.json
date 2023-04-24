@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run local",
+    "start": "npm run dev",
+    "dev": "ng serve --proxy-config proxy/proxy.dev.json --configuration=development",
     "local": "ng serve --proxy-config proxy/proxy.local.json --configuration=local",
     "build": "ng build",
     "build:local": "ng build --configuration=local",

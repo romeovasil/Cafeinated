@@ -13,17 +13,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Cafa cu lapte",
-            "price": 100
+            "pricePerUnit": 100
           }
         ]
     },
@@ -40,17 +40,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 35
+            "pricePerUnit": 35
           },
           {
             "id": 4,
@@ -66,27 +66,27 @@
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 35
+            "pricePerUnit": 35
           },
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 35
+            "pricePerUnit": 35
           }
         ]
     },
@@ -103,17 +103,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
     },
@@ -131,17 +131,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -160,17 +160,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -189,17 +189,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -218,17 +218,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -247,17 +247,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -276,17 +276,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -305,17 +305,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -334,17 +334,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -363,17 +363,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -392,17 +392,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -421,17 +421,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }
@@ -450,17 +450,17 @@
           {
             "id": 1,
             "name": "Espresso",
-            "price": 2.5
+            "pricePerUnit": 2.5
           },
           {
             "id": 2,
             "name": "Cappuccino",
-            "price": 3.5
+            "pricePerUnit": 3.5
           },
           {
             "id": 3,
             "name": "Latte",
-            "price": 3.5
+            "pricePerUnit": 3.5
           }
         ]
       }

@@ -1,6 +1,6 @@
 namespace Cafeinated.Backend.App.DTOs.Abstractions;
 
-public class BaseDto
+public class BaseResponseDto
 {
     public string Id { get; set; }
 }
