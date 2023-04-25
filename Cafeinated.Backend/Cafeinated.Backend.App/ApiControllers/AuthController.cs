@@ -25,7 +25,7 @@ public class AuthController : Controller
             return BadRequest(response.Errors);
         }
 
-        return Ok(new LoginResponseDto {Token = response.Item});
+        return Ok(((ActionResponse<Session>) response).Item);
     }
 
     [HttpPost("register")]

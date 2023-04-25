@@ -5,5 +5,5 @@ namespace Cafeinated.Backend.Infrastructure.Services.Abstractions;
 public interface IAuthService
 {
     Task<ActionResponse<string>> Register(RegisterDto registerDto);
-    Task<ActionResponse<string>> Login(LoginDto loginDto);
+    Task<ActionResponse> Login(LoginDto loginDto);
 }

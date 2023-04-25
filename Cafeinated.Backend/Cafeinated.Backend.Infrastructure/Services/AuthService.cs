@@ -79,7 +79,7 @@ public class AuthService : IAuthService
         return new ActionResponse<string>{Item = "Account created!"};
     }
 
-    public async Task<ActionResponse<string>> Login(LoginDto loginDto)
+    public async Task<ActionResponse> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
         if (user is null)
@@ -110,9 +110,17 @@ public class AuthService : IAuthService
                 Errors = new List<string> { "You don't have the User role!" }
             };
         }
-          
-        var token = GenerateAuthenticationResult(user, userRole.FirstOrDefault());
-        return new ActionResponse<string>{Item = token};
+
+        var session = new Session
+        {
+            UserId = user.Id,
+            TokenType = "Bearer",
+            Token = GenerateAuthenticationResult(user, userRole.FirstOrDefault()),
+            Username = user.UserName,
+            Role = userRole.FirstOrDefault()
+        };
+        
+        return new ActionResponse<Session>{Action = "Login", Item = session};
     }
     
     private string GenerateAuthenticationResult(ApplicationUser newUser, string role)

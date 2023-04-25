@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 
@@ -14,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffee-shop-details.component";
 import { CartSectionComponent } from './components/cart-section/cart-section.component';
 import { NewCartPopUpComponent } from './components/new-cart-pop-up/new-cart-pop-up.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: 'about-us', component: AboutUsSectionComponent},
   {path: 'cafenele', component: CafeneleSectionComponent},
   {path: 'details/:id', component: CoffeeShopDetailsComponent},
-  {path:'cart',component:CartSectionComponent}
+  {path:'cart', component: CartSectionComponent},
+  {path:'login', component: LoginComponent}
 ]
 
 @NgModule({
@@ -34,12 +35,12 @@ const routes: Routes = [
     CafeneleSectionComponent,
     CoffeeShopDetailsComponent,
     CartSectionComponent,
-    NewCartPopUpComponent
+    NewCartPopUpComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule
   ],
   providers: [],
