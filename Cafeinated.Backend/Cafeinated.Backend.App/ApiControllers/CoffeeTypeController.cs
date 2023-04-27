@@ -29,4 +29,12 @@ public class CoffeeTypeController : Controller
 
         return Ok(response);
     }
+
+    [HttpDelete("delete/{id}")]
+    public async Task<ActionResult<CoffeeTypeResponseDto>> Delete([FromRoute] string id)
+    {
+        var deletedCoffeeType = (await _coffeeTypeRepo.Delete(id)).Item;
+        var response = _mapper.Map<CoffeeTypeResponseDto>(deletedCoffeeType);
+        return Ok(response);
+    }
 }
