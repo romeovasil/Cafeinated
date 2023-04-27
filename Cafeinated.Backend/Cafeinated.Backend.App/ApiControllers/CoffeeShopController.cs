@@ -63,4 +63,13 @@ public class CoffeeShopController : Controller
         var response = _mapper.Map<CoffeeShopResponseDto>(coffeeShopEntity);
         return Ok(response);
     }
+
+    [HttpDelete("delete/{id}")]
+    public async Task<ActionResult<CoffeeShopResponseDto>> Delete([FromRoute] string id)
+    {
+        var deleteEntity = (await _coffeeShopRepo.Delete(id)).Item;
+        var response = _mapper.Map<CoffeeShopResponseDto>(deleteEntity);
+        return Ok(response);
+
+    }
 }
