@@ -1,0 +1,82 @@
+
+<div class="main-section page-m" >
+  <div class="section-content section-content-p30">
+  <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="shippingAddress" class="form-area">
+
+      <h3>Adresa</h3>
+
+      <div class="row">
+        <div><label>Oras</label> <select class="input-space" formControlName="oras">
+          <option>Timisoara</option>
+          <option>Giroc</option>
+          <option>Dumbravita</option>
+        </select> </div>
+      </div>
+
+      <div class="row">
+        <div><label>Strada</label><input class="input-space" formControlName="strada" type="text"></div>
+      </div>
+
+      <div class="row">
+        <div><label>Numar</label><input  class="input-space" formControlName="numar" type="text"></div>
+      </div>
+
+      <div class="row">
+        <div><label>Apartament</label><input  class="input-space" formControlName="apartament" type="text"></div>
+      </div>
+
+    </div>
+
+
+    <div>
+      <input type="radio" name="paymentMethod" (click)="changePaymentMethod('card')" /> Plateste cu cardul
+      <input type="radio" name="paymentMethod" (click)="changePaymentMethod('cash')" /> Plateste cu cash
+    </div>
+
+
+    <div *ngIf="selectedPaymentMethod === 'card'" formGroupName="creditCard" class="form-area">
+
+      <h3>Credit Card</h3>
+
+      <div class="row">
+        <div><label>Tip card</label> <select class="input-space" formControlName="cardType">
+          <option>Mastercard</option>
+          <option>Visa</option>
+        </select> </div>
+      </div>
+
+      <div class="row">
+        <div><label>Nume de pe card</label><input class="input-space" formControlName="cardName" type="text"></div>
+      </div>
+
+      <div class="row">
+        <div><label>Numar card</label><input  class="input-space" formControlName="cardNumber" type="text"></div>
+      </div>
+
+      <div class="row">
+        <div><label>CVV</label><input  class="input-space" formControlName="cvv" type="text"></div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="form-area">
+      <p>Cantitate totala:{{totalQuantity}}</p>
+      <p>Pret total:{{totalPrice}}</p>
+    </div>
+
+
+
+    <div>
+      <button type="submit">Cumpara</button>
+    </div>
+
+  </form>
+
+  </div>
+
+</div>

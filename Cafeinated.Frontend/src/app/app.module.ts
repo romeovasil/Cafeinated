@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppComponent} from './app.component';
+
 
 
 import {RouterModule, Routes} from "@angular/router";
@@ -14,6 +14,9 @@ import {CoffeeShopDetailsComponent} from "./components/coffee-shop-details/coffe
 import { CartSectionComponent } from './components/cart-section/cart-section.component';
 import { NewCartPopUpComponent } from './components/new-cart-pop-up/new-cart-pop-up.component';
 import { LoginComponent } from './components/login/login.component';
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -23,7 +26,8 @@ const routes: Routes = [
   {path: 'cafenele', component: CafeneleSectionComponent},
   {path: 'details/:id', component: CoffeeShopDetailsComponent},
   {path:'cart', component: CartSectionComponent},
-  {path:'login', component: LoginComponent}
+  {path:'login', component: LoginComponent},
+  {path:'checkout',component: CheckoutPageComponent}
 ]
 
 @NgModule({
@@ -36,12 +40,16 @@ const routes: Routes = [
     CoffeeShopDetailsComponent,
     CartSectionComponent,
     NewCartPopUpComponent,
-    LoginComponent
+    LoginComponent,
+    CheckoutPageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
