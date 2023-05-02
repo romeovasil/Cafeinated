@@ -24,7 +24,7 @@ export class AuthService {
               private router: Router) {
   }
 
-  public async login(requestModel: Login): Promise<any> {
+  public async login(requestModel: Login): Promise<boolean> {
     const url = this._baseUrl + 'api/auth/login';
     return firstValueFrom(this.http.post<Session>(url, requestModel)
       .pipe(tap(async res => {

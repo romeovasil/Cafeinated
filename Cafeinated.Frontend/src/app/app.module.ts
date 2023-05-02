@@ -17,6 +17,10 @@ import { LoginComponent } from './components/login/login.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -28,6 +32,12 @@ const routes: Routes = [
   {path:'cart', component: CartSectionComponent},
   {path:'login', component: LoginComponent},
   {path:'checkout',component: CheckoutPageComponent}
+]
+
+const matImports = [
+  MatSnackBarModule,
+  MatFormFieldModule,
+  MatInputModule,
 ]
 
 @NgModule({
@@ -48,8 +58,9 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
-
+    FormsModule,
+    ...matImports,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

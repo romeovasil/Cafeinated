@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="main-content">
+
+  <div class="header">
+    <h1>CONT</h1>
+  </div>
+  <form [formGroup]="loginForm" class="login-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Adresa de email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Parola</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+    <button class="submit-button" (click)="submit()">Log in</button>
+  </form>
+</div>
