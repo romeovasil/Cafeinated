@@ -24,6 +24,13 @@ export class LoginComponent {
   }
 
   async submit(): Promise<void> {
+    this.loginForm.markAllAsTouched();
+
+    if (this.loginForm.invalid) {
+      this._snack.open('Formularul este invalid!', 'Close');
+      return;
+    }
+
     try {
       await this._authService.login(this.loginForm.value as Login);
       this._snack.open('Autentificarea a avut succes!', 'Close');
