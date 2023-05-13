@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 
 @Component({
@@ -21,10 +21,10 @@ export class CheckoutPageComponent implements OnInit{
   ngOnInit(): void {
     this.checkoutFormGroup = this.formBuilder.group({
       shippingAddress:this.formBuilder.group({
-        oras:[''],
-        strada:[''],
-        numar:[''],
-        apartament:['']
+        oras: new FormControl('', Validators.required),
+        strada:new FormControl('', Validators.required),
+        numar:new FormControl('', Validators.required),
+        apartament:new FormControl('', Validators.required)
 
       }),
       creditCard:this.formBuilder.group({
@@ -39,8 +39,14 @@ export class CheckoutPageComponent implements OnInit{
 
 
   onSubmit(){
-    console.log(this.checkoutFormGroup.get('shippingAddress')?.value);
-    console.log(this.selectedPaymentMethod)
+      if(this.checkoutFormGroup.invalid){
+        console.log("invalid");
+        this.checkoutFormGroup.markAllAsTouched();
+        return;
+      }
+      else{
+        console.log("valid")
+      }
   }
 
 
@@ -61,4 +67,12 @@ export class CheckoutPageComponent implements OnInit{
 
     this.cartService.computeCartTotals();
   }
+
+  get strada() {
+    return this.checkoutFormGroup.get('shippingAddress.strada'); }
+  get oras() { return this.checkoutFormGroup.get('shippingAddress.oras'); }
+  get numar() { return this.checkoutFormGroup.get('shippingAddress.numar'); }
+  get apartament() { return this.checkoutFormGroup.get('shippingAddress.apartament'); }
+
+
 }
