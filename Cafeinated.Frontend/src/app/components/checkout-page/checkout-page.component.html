@@ -9,22 +9,42 @@
 
       <div class="row">
         <div><label>Oras</label> <select class="input-space" formControlName="oras">
+          <option value="" disabled selected>Alegeti un oras</option>
           <option>Timisoara</option>
           <option>Giroc</option>
           <option>Dumbravita</option>
-        </select> </div>
+
+        </select>
+          <div *ngIf="oras?.invalid && (oras?.dirty || oras?.touched)" class="alert">
+            Alegeti un oras
+          </div></div>
       </div>
 
       <div class="row">
-        <div><label>Strada</label><input class="input-space" formControlName="strada" type="text"></div>
+        <div><label>Strada</label>
+          <input class="input-space" formControlName="strada" type="text">
+          <div *ngIf="strada?.invalid && (strada?.dirty || strada?.touched)" class="alert">
+            Introduceti o strada
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Numar</label><input  class="input-space" formControlName="numar" type="text"></div>
+        <div><label>Numar</label>
+          <input  class="input-space" formControlName="numar" type="text">
+          <div *ngIf="numar?.invalid && (numar?.dirty || numar?.touched)" class="alert">
+            Introduceti un numar
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Apartament</label><input  class="input-space" formControlName="apartament" type="text"></div>
+        <div><label>Apartament</label>
+          <input  class="input-space" formControlName="apartament" type="text">
+          <div *ngIf="apartament?.invalid && (apartament?.dirty || apartament?.touched)" class="alert">
+            Introduceti un apartament
+          </div>
+        </div>
       </div>
 
     </div>
