@@ -9,30 +9,50 @@
 
       <div class="row">
         <div><label>Oras</label> <select class="input-space" formControlName="oras">
+          <option value="" disabled selected>Alegeti un oras</option>
           <option>Timisoara</option>
           <option>Giroc</option>
           <option>Dumbravita</option>
-        </select> </div>
+
+        </select>
+          <div *ngIf="oras?.invalid && (oras?.dirty || oras?.touched)" class="alert">
+            Alegeti un oras
+          </div></div>
       </div>
 
       <div class="row">
-        <div><label>Strada</label><input class="input-space" formControlName="strada" type="text"></div>
+        <div><label>Strada</label>
+          <input class="input-space" formControlName="strada" type="text">
+          <div *ngIf="strada?.invalid && (strada?.dirty || strada?.touched)" class="alert">
+            Introduceti o strada
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Numar</label><input  class="input-space" formControlName="numar" type="text"></div>
+        <div><label>Numar</label>
+          <input  class="input-space" formControlName="numar" type="text">
+          <div *ngIf="numar?.invalid && (numar?.dirty || numar?.touched)" class="alert">
+            Introduceti un numar
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Apartament</label><input  class="input-space" formControlName="apartament" type="text"></div>
+        <div><label>Apartament</label>
+          <input  class="input-space" formControlName="apartament" type="text">
+          <div *ngIf="apartament?.invalid && (apartament?.dirty || apartament?.touched)" class="alert">
+            Introduceti un apartament
+          </div>
+        </div>
       </div>
 
     </div>
 
 
     <div>
-      <input type="radio" name="paymentMethod" (click)="changePaymentMethod('card')" /> Plateste cu cardul
-      <input type="radio" name="paymentMethod" (click)="changePaymentMethod('cash')" /> Plateste cu cash
+      <input type="radio" name="paymentMethod" value="card" (click)="changePaymentMethod('card')" /> Plateste cu cardul
+      <input type="radio" name="paymentMethod" value="cash" checked (click)="changePaymentMethod('cash')" /> Plateste cu cash
     </div>
 
 
@@ -42,21 +62,41 @@
 
       <div class="row">
         <div><label>Tip card</label> <select class="input-space" formControlName="cardType">
+          <option value="" disabled selected>Selectati un card</option>
           <option>Mastercard</option>
           <option>Visa</option>
-        </select> </div>
+        </select>
+          <div *ngIf="cardType?.invalid && (cardType?.dirty || cardType?.touched)" class="alert">
+            Selectati un tip de card
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Nume de pe card</label><input class="input-space" formControlName="cardName" type="text"></div>
+        <div><label>Nume de pe card</label>
+          <input class="input-space" formControlName="cardName" type="text">
+          <div *ngIf="cardName?.invalid && (cardName?.dirty || cardName?.touched)" class="alert">
+            Introduceti numele de pe card
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>Numar card</label><input  class="input-space" formControlName="cardNumber" type="text"></div>
+        <div><label>Numar card</label>
+          <input  class="input-space" formControlName="cardNumber" type="text">
+          <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="alert">
+            Introduceti numarul de pe card
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div><label>CVV</label><input  class="input-space" formControlName="cvv" type="text"></div>
+        <div><label>CVV</label>
+          <input  class="input-space" formControlName="cvv" type="text">
+          <div *ngIf="cvv?.invalid && (cvv?.dirty || cvv?.touched)" class="alert">
+            Introduceti cvv-ul
+          </div>
+        </div>
       </div>
 
     </div>

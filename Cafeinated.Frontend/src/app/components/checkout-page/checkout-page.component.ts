@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-checkout-page',
@@ -10,42 +11,77 @@ import {CartService} from "../../services/cart.service";
 export class CheckoutPageComponent implements OnInit{
 
   checkoutFormGroup: FormGroup;
-  selectedPaymentMethod: string ;
+  selectedPaymentMethod: string = "cash";
   transportFee: number =7;
   totalPrice:number=0;
   totalQuantity:number=0;
-  constructor(private formBuilder:FormBuilder,private cartService:CartService) {
+  constructor(private formBuilder:FormBuilder,private cartService:CartService,private router:Router) {
     this.reviewCartDetails()
   }
 
   ngOnInit(): void {
     this.checkoutFormGroup = this.formBuilder.group({
-      shippingAddress:this.formBuilder.group({
-        oras:[''],
-        strada:[''],
-        numar:[''],
-        apartament:['']
-
+      shippingAddress: this.formBuilder.group({
+        oras: new FormControl('', Validators.required),
+        strada: new FormControl('', Validators.required),
+        numar: new FormControl('', Validators.required),
+        apartament: new FormControl('', Validators.required)
       }),
-      creditCard:this.formBuilder.group({
-        cartType:[''],
-        cardName:[''],
-        cardNumber:[''],
-        cvv:['']
-
+      paymentMethod: new FormControl('cash'),
+      creditCard: this.formBuilder.group({
+        cardType: new FormControl(''),
+        cardName: new FormControl(''),
+        cardNumber: new FormControl(''),
+        cvv: new FormControl('')
       }),
+    });
+
+    this.checkoutFormGroup.get('paymentMethod')?.valueChanges.subscribe(paymentMethod => {
+      const creditCardGroup = this.checkoutFormGroup.get('creditCard');
+      if (creditCardGroup) {
+        if (paymentMethod === 'card') {
+          creditCardGroup.get('cardType')?.setValidators([Validators.required]);
+          creditCardGroup.get('cardName')?.setValidators([Validators.required]);
+          creditCardGroup.get('cardNumber')?.setValidators([Validators.required]);
+          creditCardGroup.get('cvv')?.setValidators([Validators.required]);
+        } else {
+          creditCardGroup.get('cardType')?.clearValidators();
+          creditCardGroup.get('cardName')?.clearValidators();
+          creditCardGroup.get('cardNumber')?.clearValidators();
+          creditCardGroup.get('cvv')?.clearValidators();
+        }
+        creditCardGroup.get('cardType')?.updateValueAndValidity();
+        creditCardGroup.get('cardName')?.updateValueAndValidity();
+        creditCardGroup.get('cardNumber')?.updateValueAndValidity();
+        creditCardGroup.get('cvv')?.updateValueAndValidity();
+      }
     });
   }
 
 
+
+
   onSubmit(){
-    console.log(this.checkoutFormGroup.get('shippingAddress')?.value);
-    console.log(this.selectedPaymentMethod)
+      if(this.checkoutFormGroup.invalid){
+        console.log("invalid");
+        console.log(this.selectedPaymentMethod)
+        this.checkoutFormGroup.markAllAsTouched();
+        return;
+      }
+      else{
+        this.checkoutFormGroup.reset();
+        this.cartService.deleteCart();
+        this.reviewCartDetails();
+        // this.router.navigate(['/']);
+        console.log("valid")
+      }
   }
 
 
   changePaymentMethod(paymentMethod: string) {
     this.selectedPaymentMethod=paymentMethod;
+    this.checkoutFormGroup.get('paymentMethod')?.setValue('card');
+
   }
 
 
@@ -61,4 +97,16 @@ export class CheckoutPageComponent implements OnInit{
 
     this.cartService.computeCartTotals();
   }
+
+  get strada() {
+    return this.checkoutFormGroup.get('shippingAddress.strada'); }
+  get oras() { return this.checkoutFormGroup.get('shippingAddress.oras'); }
+  get numar() { return this.checkoutFormGroup.get('shippingAddress.numar'); }
+  get apartament() { return this.checkoutFormGroup.get('shippingAddress.apartament'); }
+
+  get cardType() { return this.checkoutFormGroup.get('creditCard.cardType'); }
+  get cardName() { return this.checkoutFormGroup.get('creditCard.cardName'); }
+  get cardNumber() { return this.checkoutFormGroup.get('creditCard.cardNumber'); }
+  get cvv() { return this.checkoutFormGroup.get('creditCard.cvv'); }
+
 }
