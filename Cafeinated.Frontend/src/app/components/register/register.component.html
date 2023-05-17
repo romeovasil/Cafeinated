@@ -1,0 +1,70 @@
+<ng-container *ngIf="showPopup">
+  <div class="popup-container">
+    <div class="content">
+      <div class="header">
+        <h1>CREARE CONT</h1>
+      </div>
+      <form [formGroup]="registerForm" class="register-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu numele tău</mat-label>
+          <input matInput formControlName="firstName">
+          <mat-error *ngIf="registerForm.get('firstName')!.hasError('required')">
+            Numele este obligatoriu
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu prenumele tău</mat-label>
+          <input matInput formControlName="lastName">
+          <mat-error *ngIf="registerForm.get('lastName')!.hasError('required')">
+            Prenumele este obligatoriu
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu adresa ta de mail</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="registerForm.get('email')!.hasError('required')">
+            Adresa de email este obligatorie
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('email')!.hasError('email')">
+            Adresa de email nu este valida
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu parola dorită</mat-label>
+          <input type="password" matInput formControlName="password">
+          <mat-error *ngIf="registerForm.get('password')!.hasError('required')">
+            Parola este obligatorie
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirma parola</mat-label>
+          <input type="password" matInput formControlName="confirmPassword">
+          <mat-error *ngIf="registerForm.get('confirmPassword')!.hasError('required')">
+            Parola este obligatorie
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('confirmPassword')!.hasError('notSame')">
+            Parolele nu sunt identice
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu adresa ta</mat-label>
+          <input matInput formControlName="address">
+          <mat-error *ngIf="registerForm.get('address')!.hasError('required')">
+            Adresa este obligatorie
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Introdu numărul de telefon</mat-label>
+          <input matInput formControlName="phoneNumber">
+          <mat-error *ngIf="registerForm.get('phoneNumber')!.hasError('required')">
+            Numărul de telefon este obligatoriu
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <div class="button-container">
+        <button (click)="closePopup()" class="return-page-button">&#8617;</button>
+        <button (click)="submit()" class="register-button">&#10004;</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

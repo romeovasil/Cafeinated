@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="main-content">
+  <div class="header">
+    <h1>CONT</h1>
+  </div>
+  <form [formGroup]="loginForm" class="login-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Adresa de email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="loginForm.get('email')!.hasError('required')">
+        Adresa de email este obligatorie
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('email')!.hasError('email')">
+        Adresa de email nu este valida
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Parola</mat-label>
+      <input matInput formControlName="password" type="password">
+      <mat-error *ngIf="loginForm.get('password')!.hasError('required')">
+        Parola este obligatorie
+      </mat-error>
+    </mat-form-field>
+    <button class="submit-button" (click)="submit()">Log in</button>
+    <app-register #register></app-register>
+    <p class="register">Nu ai cont la noi? <span (click)="register.openPopup()">Creează unul acum!</span></p>
+  </form>
+</div>
