@@ -4,6 +4,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {AuthService} from '../../services/auth.service';
 import {firstValueFrom} from 'rxjs';
 import {Login} from '../../common/login';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
   constructor(
     private readonly _formBuilder: FormBuilder,
     private readonly _authService: AuthService,
-    private readonly _snack: MatSnackBar
+    private readonly _snack: MatSnackBar,
+    private readonly _router: Router
   ) {
   }
 
@@ -34,6 +36,7 @@ export class LoginComponent {
     try {
       await this._authService.login(this.loginForm.value as Login);
       this._snack.open('Autentificarea a avut succes!', 'Close');
+      await this._router.navigate(['/cafenele']);
     } catch (err) {
       this._snack.open('Oops! Ceva nu a functionat!', 'Close');
     }

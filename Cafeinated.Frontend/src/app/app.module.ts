@@ -21,6 +21,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -51,7 +52,8 @@ const matImports = [
     CartSectionComponent,
     NewCartPopUpComponent,
     LoginComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
