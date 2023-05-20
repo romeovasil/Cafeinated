@@ -22,6 +22,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './components/register/register.component';
+import { OrderComponent } from './common/order/order.component';
 
 
 
@@ -53,7 +54,8 @@ const matImports = [
     NewCartPopUpComponent,
     LoginComponent,
     CheckoutPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    OrderComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

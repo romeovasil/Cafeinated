@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CartService} from "../../services/cart.service";
 import {Router} from "@angular/router";
+import {Order} from "../../common/order";
+import {AuthService} from "../../services/auth.service";
+import {OrderService} from "../../services/order.service";
 
 @Component({
   selector: 'app-checkout-page',
@@ -15,7 +18,7 @@ export class CheckoutPageComponent implements OnInit{
   transportFee: number =7;
   totalPrice:number=0;
   totalQuantity:number=0;
-  constructor(private formBuilder:FormBuilder,private cartService:CartService,private router:Router) {
+  constructor(private formBuilder:FormBuilder,private cartService:CartService,private router:Router,private authService:AuthService,private orderService:OrderService) {
     this.reviewCartDetails()
   }
 
@@ -62,19 +65,32 @@ export class CheckoutPageComponent implements OnInit{
 
 
   onSubmit(){
-      if(this.checkoutFormGroup.invalid){
-        console.log("invalid");
-        console.log(this.selectedPaymentMethod)
-        this.checkoutFormGroup.markAllAsTouched();
-        return;
-      }
-      else{
+
+    if (this.checkoutFormGroup.invalid) {
+      console.log("invalid");
+      console.log(this.selectedPaymentMethod)
+      this.checkoutFormGroup.markAllAsTouched();
+      return;
+    } else {
+
+      this.authService.getSession().then((session) => {
+         let userId = session.userId;
+        let address= this.checkoutFormGroup.get('shippingAddress.strada')?.value
+          +this.checkoutFormGroup.get('shippingAddress.oras')?.value
+          + this.checkoutFormGroup.get('shippingAddress.numar')?.value
+          + this.checkoutFormGroup.get('shippingAddress.apartament')?.value;
+        let order = new Order(userId,address,this.totalPrice,this.cartService.getCoffeeShop());
+        console.log(order);
+        this.orderService.saveOrder(order);
         this.checkoutFormGroup.reset();
         this.cartService.deleteCart();
         this.reviewCartDetails();
         // this.router.navigate(['/']);
         console.log("valid")
-      }
+
+      });
+
+    }
   }
 
 
