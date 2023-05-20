@@ -50,7 +50,7 @@
     </div>
 
 
-    <div>
+    <div class="radio-buttons">
       <input type="radio" name="paymentMethod" value="card" (click)="changePaymentMethod('card')" /> Plateste cu cardul
       <input type="radio" name="paymentMethod" value="cash" checked (click)="changePaymentMethod('cash')" /> Plateste cu cash
     </div>
@@ -105,14 +105,14 @@
 
 
     <div class="form-area">
-      <p>Cantitate totala:{{totalQuantity}}</p>
-      <p>Pret total:{{totalPrice}}</p>
+      <p>Cantitate totala: {{totalQuantity}}</p>
+      <p>Pret total: {{totalPrice}} ron</p>
     </div>
 
 
 
     <div>
-      <button type="submit">Cumpara</button>
+      <button class="submit-button" type="submit">Cumpara</button>
     </div>
 
   </form>

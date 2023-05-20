@@ -15,17 +15,24 @@
 
 
 .form-area{
-  background:#e5e5e5;
+  background:lightgoldenrodyellow;
+
   position:relative;
   margin-bottom:45px;
   padding:50px 20px;
-  border:3px solid #ccc
+  border:3px solid lightcyan;
+  border-radius: 20px;
+
 }
 
 .input-space{
-  background-color: lightgoldenrodyellow;
+  background-color: lightcyan;
   margin-left: 50px;
   margin-top: 20px;
+}
+
+.radio-buttons{
+  margin-bottom: 20px;
 }
 .alert{
   color: red;
@@ -33,6 +40,21 @@
 }
 
 .row{
-  margin-left: 30px;
+  margin-left: 50px;
   margin-top: 10px;
 }
+p{
+  margin-left: 50px;
+}
+h3{
+  margin-left: 35px;
+}
+
+.submit-button{
+  background-color: lightgoldenrodyellow;
+  border: 3px;
+  margin-left: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
