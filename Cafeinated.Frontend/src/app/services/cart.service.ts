@@ -10,7 +10,7 @@ export class CartService {
   cartItems: CartItem[]=[];
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
-
+  coffeeShopName:string="";
   storage:Storage = localStorage;
   constructor() {
     let data =JSON.parse(this.storage.getItem('cartItems')!);
@@ -34,6 +34,7 @@ export class CartService {
     else {
       if(this.cartItems.length>0)
       {
+        this.coffeeShopName=this.cartItems[0].coffeeShop.name;
 
         if(this.cartItems[0].coffeeShop.id==theCartItem.coffeeShop.id){
           this.cartItems.push(theCartItem);
@@ -113,5 +114,9 @@ export class CartService {
       this.remove(theCartItem);
     }
     this.computeCartTotals();
+  }
+
+  getCoffeeShop(){
+    return this.coffeeShopName;
   }
 }
