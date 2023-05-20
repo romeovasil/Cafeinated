@@ -9,7 +9,16 @@ import {OrdersComponent} from "../components/orders/orders.component";
 export class OrderService {
   private orders: Order[]=[];
   private orderUrl:string="";
-  constructor(private http:HttpClient) { }
+
+  constructor(private http:HttpClient) {
+
+    let order1 = new Order("123","cetinei 2 timisoara",125,"Tucano","111")
+    let order2 = new Order("345","cetinei 3 timisoara",855,"Starbucks","222")
+    let order3 = new Order("456","cetinei 4 timisoara",79,"Vintage","333")
+    this.orders.push(order1);
+    this.orders.push(order2);
+    this.orders.push(order3);
+  }
 
   saveOrder(order: Order) {
     this.orders.push(order);
@@ -18,12 +27,7 @@ export class OrderService {
   }
 
   getOrders() {
-    let order1 = new Order("123","cetinei 2 timisoara",125,"Tucano","111")
-    let order2 = new Order("345","cetinei 3 timisoara",855,"Starbucks","222")
-    let order3 = new Order("456","cetinei 4 timisoara",79,"Vintage","333")
-    this.orders.push(order1);
-    this.orders.push(order2);
-    this.orders.push(order3);
+
     return this.orders;
   }
 
