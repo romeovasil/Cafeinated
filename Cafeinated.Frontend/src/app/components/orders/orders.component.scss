@@ -12,3 +12,20 @@
   letter-spacing: 7px;
   font-family: 'DynaPuff', cursive;
 }
+
+.orders{
+  background-color: lightgoldenrodyellow;
+  margin-top: 20px;
+  color:black;
+  height: 35px;
+  font-size: 30px;
+  margin-left: 7%;
+  margin-right: 20%;
+  border-radius: 15px;
+  overflow: auto;
+  padding: 5px; /* Adding padding to ensure the text doesn't touch the border */
+
+}
+.text{
+  margin-left: 20px;
+}

@@ -85,7 +85,7 @@ export class CheckoutPageComponent implements OnInit{
         this.checkoutFormGroup.reset();
         this.cartService.deleteCart();
         this.reviewCartDetails();
-        // this.router.navigate(['/']);
+        this.router.navigate(['/orders']);
         console.log("valid")
 
       });
