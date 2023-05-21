@@ -11,6 +11,7 @@ export class CartService {
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
   coffeeShopName:string="";
+  coffeeShopId: string = '';
   storage:Storage = localStorage;
   constructor() {
     let data =JSON.parse(this.storage.getItem('cartItems')!);
@@ -116,7 +117,7 @@ export class CartService {
     this.computeCartTotals();
   }
 
-  getCoffeeShop(){
-    return this.coffeeShopName;
+  getCoffeeShopId(){
+    return this.cartItems[0].coffeeShop.id;
   }
 }

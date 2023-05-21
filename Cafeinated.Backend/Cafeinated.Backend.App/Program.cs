@@ -81,6 +81,7 @@ services.AddAutoMapper(typeof(MappingProfile));
 
 services.AddScoped<IGenericRepository<CoffeeShop>, CoffeeShopRepository>();
 services.AddScoped<IGenericRepository<CoffeeType>, CoffeeTypeRepository>();
+services.AddScoped<IGenericRepository<Order>, OrderRepository>();
 services.AddScoped<IUploadManager, UploadManager>();
 services.AddScoped<IAuthService, AuthService>();
 

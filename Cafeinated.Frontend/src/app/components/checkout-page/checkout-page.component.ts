@@ -61,46 +61,40 @@ export class CheckoutPageComponent implements OnInit{
     });
   }
 
-
-
-
-  onSubmit(){
-
+  async onSubmit(){
     if (this.checkoutFormGroup.invalid) {
       console.log("invalid");
       console.log(this.selectedPaymentMethod)
       this.checkoutFormGroup.markAllAsTouched();
       return;
     } else {
-
-      this.authService.getSession().then((session) => {
-         let userId = session.userId;
-        let address= this.checkoutFormGroup.get('shippingAddress.strada')?.value
-          +this.checkoutFormGroup.get('shippingAddress.oras')?.value
-          + this.checkoutFormGroup.get('shippingAddress.numar')?.value
-          + this.checkoutFormGroup.get('shippingAddress.apartament')?.value;
-        let order = new Order(userId,address,this.totalPrice,this.cartService.getCoffeeShop());
-        console.log(order);
-        this.orderService.saveOrder(order);
-        this.checkoutFormGroup.reset();
-        this.cartService.deleteCart();
-        this.reviewCartDetails();
-        this.router.navigate(['/orders']);
-        console.log("valid")
-
-      });
-
-    }
+      const session = await this.authService.getSession();
+      let userId = session.userId;
+      let address= this.checkoutFormGroup.get('shippingAddress.strada')?.value +
+        this.checkoutFormGroup.get('shippingAddress.oras')?.value +
+        this.checkoutFormGroup.get('shippingAddress.numar')?.value +
+        this.checkoutFormGroup.get('shippingAddress.apartament')?.value;
+      let order = new Order(
+        userId,
+        address,
+        this.totalPrice,this.cartService.getCoffeeShopId(),
+        this.selectedPaymentMethod
+      );
+      console.log(order);
+      await this.orderService.saveOrder(order);
+      this.checkoutFormGroup.reset();
+      this.cartService.deleteCart();
+      this.reviewCartDetails();
+      await this.router.navigate(['/orders']);
+      console.log("valid")
+      }
   }
-
 
   changePaymentMethod(paymentMethod: string) {
     this.selectedPaymentMethod=paymentMethod;
     this.checkoutFormGroup.get('paymentMethod')?.setValue('card');
 
   }
-
-
 
   private reviewCartDetails() {
 

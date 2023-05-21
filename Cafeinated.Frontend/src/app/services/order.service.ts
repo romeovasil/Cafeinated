@@ -2,37 +2,25 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Order} from "../common/order";
 import {OrdersComponent} from "../components/orders/orders.component";
+import {firstValueFrom, Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {OrderReponse} from '../common/order-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
-  private orders: Order[]=[];
-  private orderUrl:string="";
+  private orderUrl = environment.apiUrl + 'api/order';
 
   constructor(private http:HttpClient) {
-
-    let order1 = new Order("123","cetinei 2 timisoara",125,"Tucano","111")
-    let order2 = new Order("345","cetinei 3 timisoara",855,"Starbucks","222")
-    let order3 = new Order("456","cetinei 4 timisoara",79,"Vintage","333")
-    this.orders.push(order1);
-    this.orders.push(order2);
-    this.orders.push(order3);
   }
 
   saveOrder(order: Order) {
-    this.orders.push(order);
-    return  this.http.post<Order>(this.orderUrl,order);
-
+    return firstValueFrom(this.http.post<Order>(this.orderUrl,order));
   }
 
-  getOrders() {
-
-    return this.orders;
-  }
-
-  getOrdersByUserId(userId:string){
-    let url = this.orderUrl;
-    return this.http.get<Order[]>(url);
+  getOrdersByUserId(userId:string): Observable<OrderReponse[]>{
+    let url = this.orderUrl + `?userId=${userId}`;
+    return this.http.get<OrderReponse[]>(url);
   }
 }
