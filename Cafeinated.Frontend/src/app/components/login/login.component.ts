@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {AuthService} from '../../services/auth.service';
@@ -11,11 +11,13 @@ import {Router} from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm = this._formBuilder.group({
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.required]]
-  })
+  });
+
+  isLoggedin = false;
 
   constructor(
     private readonly _formBuilder: FormBuilder,
@@ -39,6 +41,15 @@ export class LoginComponent {
       await this._router.navigate(['/cafenele']);
     } catch (err) {
       this._snack.open('Oops! Ceva nu a functionat!', 'Close');
+    }
+  }
+
+  async ngOnInit() {
+    this.isLoggedin = await this._authService.authStateAsync;
+    if (this.isLoggedin) {
+      const session = await this._authService.getSession();
+      this.loginForm.controls.email.setValue(session.username);
+      this.loginForm.disable();
     }
   }
 }

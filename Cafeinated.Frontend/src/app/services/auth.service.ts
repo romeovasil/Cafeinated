@@ -99,6 +99,28 @@ export class AuthService {
     return this._session;
   }
 
+  public get localAuthState(): boolean {
+    return !!this._token;
+  }
+
+  public get authStateAsync(): Promise<boolean> {
+    return new Promise(async (resolve) => {
+      if (this.localAuthState) {
+        resolve(true);
+      } else {
+        await this._loadSession();
+        resolve(this.localAuthState);
+      }
+    });
+  }
+
+  public get authStateChanged(): EventEmitter<boolean> {
+    return this._authState;
+  }
+
+  public get authState(): boolean {
+    return this.localAuthState;
+  }
 
   public async logout(): Promise<void> {
     await this.saveSession();
