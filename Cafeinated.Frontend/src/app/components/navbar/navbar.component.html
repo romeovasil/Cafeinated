@@ -6,10 +6,11 @@
 
   <div class="buttons">
     <a routerLink="/">Acasă</a>
-    <a routerLink="/cafenele">Cafenele</a>
+    <a *ngIf="isLoggedIn" routerLink="/cafenele">Cafenele</a>
     <a routerLink="/about-us">Despre noi</a>
     <a href="/login">Cont</a>
-    <a routerLink="/cart">Coș </a>
-    <a class="comandaButton" routerLink="/orders">Comenzi</a>
+    <a *ngIf="isLoggedIn" routerLink="/cart">Coș </a>
+    <a *ngIf="isLoggedIn" (click)="logout()" style="cursor: pointer">Logout</a>
+    <a *ngIf="isLoggedIn" class="comandaButton" routerLink="/orders">Comenzi</a>
   </div>
 </nav>

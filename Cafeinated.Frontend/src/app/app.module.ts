@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './components/register/register.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import {Order} from "./common/order";
+import {AuthGuard} from './guards/auth.guard';
 
 
 
@@ -31,12 +32,13 @@ import {Order} from "./common/order";
 const routes: Routes = [
   {path: '', component: WelcomeSectionComponent},
   {path: 'about-us', component: AboutUsSectionComponent},
-  {path: 'cafenele', component: CafeneleSectionComponent},
-  {path: 'details/:id', component: CoffeeShopDetailsComponent},
-  {path:'cart', component: CartSectionComponent},
+  {path: 'cafenele', component: CafeneleSectionComponent, canActivate: [AuthGuard]},
+  {path: 'details/:id', component: CoffeeShopDetailsComponent, canActivate: [AuthGuard]},
+  {path:'cart', component: CartSectionComponent, canActivate: [AuthGuard]},
   {path:'login', component: LoginComponent},
-  {path:'checkout',component: CheckoutPageComponent},
-  {path:'orders',component:OrdersComponent}
+  {path:'checkout',component: CheckoutPageComponent, canActivate: [AuthGuard]},
+  {path:'orders',component:OrdersComponent, canActivate: [AuthGuard]},
+  {path: '**', redirectTo: ''}
 ]
 
 const matImports = [
