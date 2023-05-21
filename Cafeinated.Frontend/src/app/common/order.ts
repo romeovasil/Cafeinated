@@ -1,12 +1,10 @@
-import {Coffee} from "./coffee";
-
 export class Order {
   constructor(
-              public userId: string,
+              public applicationUserId: string,
               public address: string,
               public totalPrice: number,
-              public CoffeeShopName: string,
+              public coffeeShopId: string,
+              public paymentMethod: string,
               public id?: string) {
-
   }
 }

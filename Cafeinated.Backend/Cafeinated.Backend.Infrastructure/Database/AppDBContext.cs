@@ -11,7 +11,6 @@ public class AppDBContext : IdentityDbContext<ApplicationUser>
     public DbSet<CoffeeType> CoffeeTypes { get; set; }
     public DbSet<File> Files { get; set; }
     public DbSet<Order> Orders { get; set; }
-    public DbSet<OrderCoffeeType> OrderCoffeeTypes { get; set; }
     public DbSet<Rating> Ratings { get; set; }
 
     public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
