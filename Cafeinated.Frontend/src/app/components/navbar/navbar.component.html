@@ -8,7 +8,7 @@
     <a routerLink="/">Acasă</a>
     <a *ngIf="isLoggedIn" routerLink="/cafenele">Cafenele</a>
     <a routerLink="/about-us">Despre noi</a>
-    <a href="/login">Cont</a>
+    <a *ngIf="!isLoggedIn" href="/login">Cont</a>
     <a *ngIf="isLoggedIn" routerLink="/cart">Coș </a>
     <a *ngIf="isLoggedIn" (click)="logout()" style="cursor: pointer">Logout</a>
     <a *ngIf="isLoggedIn" class="comandaButton" routerLink="/orders">Comenzi</a>

@@ -70,9 +70,9 @@ export class CheckoutPageComponent implements OnInit{
     } else {
       const session = await this.authService.getSession();
       let userId = session.userId;
-      let address= this.checkoutFormGroup.get('shippingAddress.strada')?.value +
-        this.checkoutFormGroup.get('shippingAddress.oras')?.value +
-        this.checkoutFormGroup.get('shippingAddress.numar')?.value +
+      let address= this.checkoutFormGroup.get('shippingAddress.oras')?.value + ", str. "+
+        this.checkoutFormGroup.get('shippingAddress.strada')?.value + ", nr."+
+        this.checkoutFormGroup.get('shippingAddress.numar')?.value + ", ap."+
         this.checkoutFormGroup.get('shippingAddress.apartament')?.value;
       let order = new Order(
         userId,
