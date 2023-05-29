@@ -1,8 +1,10 @@
 .main-content {
-  margin-top: 130px;
-  margin-left: 55px;
-  margin-right: 55px;
-  color: white;
+  background-color: #F4ECE7;
+  height: 100%;
+  padding-top: 130px;
+  padding-left: 55px;
+  padding-right: 55px;
+  color: #89401B;
 }
 
 .header {
@@ -26,7 +28,7 @@ mat-form-field {
 }
 
 .submit-button {
-  background-color: darkred;
+  background-color: #89401B;
   color: white;
   font-size: 20px;
   border-radius: 18px;
@@ -39,7 +41,7 @@ mat-form-field {
   margin-top: 275px;
   margin-left: 20px;
   margin-bottom: 0;
-  color: white;
+  color: #89401B;
   font-size: 31px;
 
   span {

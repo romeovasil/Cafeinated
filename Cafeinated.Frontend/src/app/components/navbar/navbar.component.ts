@@ -23,4 +23,8 @@ export class NavbarComponent {
     await this._authService.logout();
     this.isLoggedIn = false;
   }
+
+  public isLogin(): boolean {
+    return this._router.url === '/login';
+  }
 }

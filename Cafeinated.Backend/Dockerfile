@@ -4,6 +4,7 @@ WORKDIR /app/
 COPY **/Cafeinated.Backend.App.csproj /app/Cafeinated.Backend.App/
 COPY **/Cafeinated.Backend.Core.csproj /app/Cafeinated.Backend.Core/
 COPY **/Cafeinated.Backend.Infrastructure.csproj /app/Cafeinated.Backend.Infrastructure/
+COPY **/Cafeinated.Backend.Tests.csproj /app/Cafeinated.Backend.Tests/
 COPY *.sln /app/
 
 RUN dotnet restore

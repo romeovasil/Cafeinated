@@ -1,4 +1,4 @@
-<nav>
+<nav [style.background-color]="isLogin() ? '#89401B' : '#fca968'">
   <div class="logoButton">
     <a href="#">Cafeinated</a>
   </div>
@@ -13,4 +13,4 @@
     <a *ngIf="isLoggedIn" (click)="logout()" style="cursor: pointer">Logout</a>
     <a *ngIf="isLoggedIn" class="comandaButton" routerLink="/orders">Comenzi</a>
   </div>
-</nav>
+</nav>ț
