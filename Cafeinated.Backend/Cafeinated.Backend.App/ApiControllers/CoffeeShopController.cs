@@ -48,6 +48,25 @@ public class CoffeeShopController : Controller
 
         return Ok(response);
     }
+    
+    [HttpGet("{id}")]
+    public async Task<ActionResult<CoffeeShopResponseDto>> GetById([FromRoute] string id)
+    {
+        var coffeeShopResponse = await _coffeeShopRepo.GetEntityBy(cs => cs.Id == id);
+
+        if (coffeeShopResponse.HasErrors())
+        {
+            return NotFound();
+        }
+
+        var coffeeShop = coffeeShopResponse.Item;
+        var response = _mapper.Map<CoffeeShopResponseDto>(coffeeShop);
+        var coffeeTypes = (await _coffeeTypeRepo.FindBy(ct => ct.CoffeeShopId == coffeeShop.Id)).Item;
+        var coffeeList = _mapper.Map<IEnumerable<CoffeeTypeResponseDto>>(coffeeTypes);
+        response.CoffeeList = coffeeList;
+
+        return Ok(response);
+    }
 
     [HttpPost]
     public async Task<ActionResult<CoffeeShopResponseDto>> Add([FromQuery] CoffeeShopRequestDto coffeeShopRequestDto, IFormFile file)
@@ -67,7 +86,14 @@ public class CoffeeShopController : Controller
     [HttpDelete("delete/{id}")]
     public async Task<ActionResult<CoffeeShopResponseDto>> Delete([FromRoute] string id)
     {
-        var deleteEntity = (await _coffeeShopRepo.Delete(id)).Item;
+        var deletedResponse = await _coffeeShopRepo.Delete(id);
+
+        if (deletedResponse.HasErrors())
+        {
+            return NotFound();
+        }
+
+        var deleteEntity = deletedResponse.Item;
         var response = _mapper.Map<CoffeeShopResponseDto>(deleteEntity);
         return Ok(response);
 

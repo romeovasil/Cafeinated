@@ -19,6 +19,29 @@ public class CoffeeTypeController : Controller
         _mapper = mapper;
         _coffeeTypeRepo = coffeeTypeRepo;
     }
+    
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<CoffeeTypeResponseDto>>> GetAll()
+    {
+        var coffeeTypes = (await _coffeeTypeRepo.GetAll()).Item;
+        var response = _mapper.Map<IEnumerable<CoffeeTypeResponseDto>>(coffeeTypes);
+
+        return Ok(response);
+    }
+    
+    [HttpGet("{id}")]
+    public async Task<ActionResult<CoffeeTypeResponseDto>> GetById([FromRoute] string id)
+    {
+        var coffeeTypeResponse = await _coffeeTypeRepo.GetEntityBy(ct => ct.Id == id);
+
+        if (coffeeTypeResponse.HasErrors())
+        {
+            return NotFound();
+        }
+
+        var response = _mapper.Map<CoffeeTypeResponseDto>(coffeeTypeResponse.Item);
+        return Ok(response);
+    }
 
     [HttpPost]
     public async Task<ActionResult<CoffeeTypeResponseDto>> Add([FromBody] CoffeeTypeRequestDto coffeeTypeRequestDto)

@@ -9,14 +9,14 @@ namespace Cafeinated.Backend.Infrastructure.Repositories;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
-    private readonly DbSet<T> _dbSet;
+    public readonly DbSet<T> DbSet;
     private readonly AppDBContext _dbContext;
     private IQueryable<T> _queryable;
 
     public GenericRepository(AppDBContext dbContext)
     {
-        _dbSet = dbContext.Set<T>();
-        _queryable = _dbSet;
+        DbSet = dbContext.Set<T>();
+        _queryable = DbSet;
         _dbContext = dbContext;
     }
     
@@ -57,7 +57,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         entity.Created = entity.Updated = DateTime.Now;
         entity.Id = Guid.NewGuid().ToString();
 
-        var addedEntity = await _dbSet.AddAsync(entity);
+        var addedEntity = await DbSet.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
         
         return new ActionResponse<T>(addedEntity.Entity) ;
@@ -67,14 +67,14 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         var response = new ActionResponse<T>();
         
-        var existingEntity = await _dbSet.FirstOrDefaultAsync(e => e.Id == id);
+        var existingEntity = await DbSet.FirstOrDefaultAsync(e => e.Id == id);
         if (existingEntity is null)
         {
             response.AddError("Entity doesn't exist!");
             return response;
         }
 
-        var removedEntity = _dbSet.Remove(existingEntity);
+        var removedEntity = DbSet.Remove(existingEntity);
         await _dbContext.SaveChangesAsync();
 
         response.Item = removedEntity.Entity;
@@ -84,7 +84,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public async Task<ActionResponse<T>> Edit(T entity)
     {
         entity.Updated = DateTime.Now;
-        var updatedEntity = _dbSet.Update(entity);
+        var updatedEntity = DbSet.Update(entity);
         await _dbContext.SaveChangesAsync();
 
         return new ActionResponse<T>(updatedEntity.Entity);
