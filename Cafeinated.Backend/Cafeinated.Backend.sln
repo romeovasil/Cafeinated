@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafeinated.Backend.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafeinated.Backend.Infrastructure", "Cafeinated.Backend.Infrastructure\Cafeinated.Backend.Infrastructure.csproj", "{B3D10FE3-8A5C-40BA-A524-7392AA9F8814}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafeinated.Backend.Tests", "Cafeinated.Backend.Tests\Cafeinated.Backend.Tests.csproj", "{4A59B44F-BF83-44C6-904F-9E8D9AA6592C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B3D10FE3-8A5C-40BA-A524-7392AA9F8814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D10FE3-8A5C-40BA-A524-7392AA9F8814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D10FE3-8A5C-40BA-A524-7392AA9F8814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A59B44F-BF83-44C6-904F-9E8D9AA6592C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A59B44F-BF83-44C6-904F-9E8D9AA6592C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A59B44F-BF83-44C6-904F-9E8D9AA6592C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A59B44F-BF83-44C6-904F-9E8D9AA6592C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
